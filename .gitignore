@@ -1,0 +1,25 @@
+.vs/
+.vscode/
+
+# .NET
+**/bin/
+**/obj/
+TestResults/
+
+# Node / Angular
+**/node_modules/
+**/dist/
+**/.angular/
+**/coverage/
+
+# Local settings
+**/appsettings.Local.json
+**/.env
+**/.env.local
+**/*.db
+**/*.db-shm
+**/*.db-wal
+
+# OS files
+Thumbs.db
+Desktop.ini
