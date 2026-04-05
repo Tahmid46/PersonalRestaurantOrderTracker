@@ -10,10 +10,10 @@
 
 .hero-card {
 	max-width: 1120px;
-	margin: 0 auto;
-	padding: 40px;
+	margin: 0 auto 24px;
+	overflow: hidden;
 	border-radius: 28px;
-	background: rgba(255, 252, 247, 0.88);
+	background: rgba(255, 252, 247, 0.82);
 	box-shadow: 0 24px 80px rgba(67, 34, 16, 0.12);
 	backdrop-filter: blur(10px);
 }
@@ -21,9 +21,11 @@
 .topbar {
 	display: flex;
 	justify-content: space-between;
+	align-items: flex-start;
 	gap: 24px;
-	align-items: start;
-	margin-bottom: 24px;
+	padding: 32px;
+	height: auto;
+	background: transparent;
 }
 
 .eyebrow {
@@ -49,32 +51,6 @@ h1 {
 	color: #5c4638;
 }
 
-.status-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-	gap: 16px;
-	margin-top: 32px;
-}
-
-.status-grid article {
-	padding: 20px;
-	border-radius: 20px;
-	background: #fff7ef;
-	border: 1px solid rgba(139, 94, 60, 0.12);
-}
-
-.status-grid h2 {
-	margin: 0 0 8px;
-	font-size: 1.1rem;
-	color: #53311f;
-}
-
-.status-grid p {
-	margin: 0;
-	color: #6d5546;
-	line-height: 1.6;
-}
-
 .nav-actions {
 	display: flex;
 	align-items: center;
@@ -83,121 +59,17 @@ h1 {
 	justify-content: flex-end;
 }
 
-.nav-actions a,
-.secondary-button {
-	border: 0;
+.nav-actions :is(a, button) {
 	border-radius: 999px;
-	padding: 12px 18px;
-	background: #f6ecdf;
-	color: #53311f;
-	text-decoration: none;
-	font: inherit;
-	font-weight: 700;
-	cursor: pointer;
-	transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.nav-actions a:hover,
-.secondary-button:hover {
-	transform: translateY(-1px);
-	background: #efdfca;
-}
-
-.nav-actions .primary-link {
-	background: #53311f;
-	color: #fff9f2;
-}
-
-.nav-actions .primary-link:hover {
-	background: #3f2417;
 }
 
 .nav-actions .is-active {
-	outline: 2px solid rgba(83, 49, 31, 0.18);
-	outline-offset: 2px;
+	box-shadow: inset 0 0 0 1px rgba(83, 49, 31, 0.18);
 }
 
-.auth-card,
-.dashboard-card {
-	max-width: 720px;
-}
-
-.auth-card {
-	margin: 0 auto;
-	padding: 40px;
-	border-radius: 28px;
-	background: rgba(255, 252, 247, 0.9);
-	box-shadow: 0 24px 80px rgba(67, 34, 16, 0.1);
-	backdrop-filter: blur(10px);
-}
-
-.auth-card h2,
-.dashboard-card h2,
-.dashboard-card h3 {
-	margin: 0;
-	color: #2c1a12;
-}
-
-.auth-copy {
-	margin: 12px 0 0;
-	color: #6d5546;
-	line-height: 1.7;
-}
-
-.auth-form {
-	display: grid;
-	gap: 16px;
-	margin-top: 28px;
-}
-
-.auth-form label {
-	display: grid;
-	gap: 8px;
-	color: #53311f;
-	font-weight: 700;
-}
-
-.auth-form input {
-	width: 100%;
-	padding: 14px 16px;
-	border-radius: 16px;
-	border: 1px solid rgba(83, 49, 31, 0.16);
-	background: #fff9f2;
-	font: inherit;
-	color: #2c1a12;
-}
-
-.auth-form button {
-	margin-top: 8px;
-	padding: 14px 18px;
-	border: 0;
-	border-radius: 999px;
-	background: #53311f;
-	color: #fff9f2;
-	font: inherit;
-	font-weight: 700;
-	cursor: pointer;
-}
-
-.auth-form button:disabled {
-	opacity: 0.6;
-	cursor: default;
-}
-
-.auth-error {
-	margin: 0;
-	color: #9a2d22;
-	font-size: 0.95rem;
-}
-
-.auth-footer {
-	margin: 20px 0 0;
-	color: #6d5546;
-}
-
-.auth-footer a {
-	color: #53311f;
-	font-weight: 700;
+.brand-copy {
+	flex: 1 1 auto;
+	min-width: 0;
 }
 
 @media (max-width: 640px) {
@@ -205,11 +77,8 @@ h1 {
 		padding: 16px;
 	}
 
-	.hero-card {
-		padding: 24px;
-	}
-
 	.topbar {
 		flex-direction: column;
+		padding: 24px;
 	}
 }

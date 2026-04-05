@@ -1,24 +1,26 @@
 <main class="app-shell">
-    <header class="topbar hero-card">
-        <div>
-            <p class="eyebrow">Restaurant Journal</p>
-            <h1>Restaurant Order Tracker</h1>
-            <p class="intro">Track visits, dishes, spend, and reviews with account-based access.</p>
-        </div>
+    <mat-card appearance="outlined" class="hero-card">
+        <mat-toolbar class="topbar" role="banner">
+            <div class="brand-copy">
+                <p class="eyebrow">Restaurant Journal</p>
+                <h1>Restaurant Order Tracker</h1>
+                <p class="intro">Track visits, dishes, spend, and reviews with account-based access.</p>
+            </div>
 
-        <nav class="nav-actions" aria-label="Primary navigation">
-            <a routerLink="/dashboard" routerLinkActive="is-active">Dashboard</a>
+            <nav class="nav-actions" aria-label="Primary navigation">
+                <a mat-button routerLink="/dashboard" routerLinkActive="is-active">Dashboard</a>
 
-            <ng-container *ngIf="authService.isAuthenticated(); else guestActions">
-                <button type="button" class="secondary-button" (click)="logout()">Sign out</button>
-            </ng-container>
+                <ng-container *ngIf="authService.isAuthenticated(); else guestActions">
+                    <button mat-stroked-button type="button" (click)="logout()">Sign out</button>
+                </ng-container>
 
-            <ng-template #guestActions>
-                <a routerLink="/login" routerLinkActive="is-active">Sign in</a>
-                <a routerLink="/register" routerLinkActive="is-active" class="primary-link">Register</a>
-            </ng-template>
-        </nav>
-    </header>
+                <ng-template #guestActions>
+                    <a mat-button routerLink="/login" routerLinkActive="is-active">Sign in</a>
+                    <a mat-flat-button routerLink="/register" routerLinkActive="is-active">Register</a>
+                </ng-template>
+            </nav>
+        </mat-toolbar>
+    </mat-card>
 
     <router-outlet></router-outlet>
 </main>
